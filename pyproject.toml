@@ -1,0 +1,180 @@
+# ============================================================
+# pyproject.toml (Python project configuration)
+# ============================================================
+# REQ.PYTHON: Python projects MUST include pyproject.toml as the single source of truth.
+# WHY: Centralizes project configuration.
+# CUSTOM: Update identity and build tool src folders.
+
+# ============================================================
+# SECTION 1: PROJECT IDENTITY (name, version, CUSTOM dependencies)
+# ============================================================
+
+[project]
+name = "datafun-07-regression" # CUSTOM: Package distribution name (use lowercase and dashes).
+readme = "README.md"
+requires-python = ">=3.14"
+version = "0.1.0"
+
+dependencies = [
+    # REQ.DEPS: External packages used by the project code.
+    "datafun-toolkit", # logging
+    "ipykernel", # notebooks
+    "ipython",   # notebooks
+    "pandas",    # tabular data manipulation
+    "scikit-learn", # machine learning library for regression and more
+    "seaborn",   # statistical data visualization built on matplotlib
+    "matplotlib" # plotting library for static, animated, and interactive visualizations in Python
+]
+
+[project.optional-dependencies]
+# WHY: Optional dependency groups keep the core install clean and focused.
+dev = [
+    # WHY: Only used during development, not required for running the package.
+    "pre-commit", # code formatting and linting
+    "pyright",    # static type checking
+    "pytest",     # testing framework
+    "pytest-cov", # test coverage
+    "ruff",       # linting and formatting
+]
+
+docs = [
+    # WHY: Only needed for building documentation, not required for running the package.
+    "mkdocstrings[python]", # automatic API documentation from docstrings
+    "zensical", # fast and minimal static site generator for documentation
+]
+
+# ============================================================
+# SECTION 2: TOOL CONFIGURATION (Professional basics)
+# ============================================================
+
+# === PYRIGHT (TYPE CHECKING HELPS FIND COMMON ERRORS BEFORE THE CODE RUNS) ===
+
+[tool.pyright]
+# CUSTOM: Pyright configuration for static type checking.
+# This configuration is NOT enforced by CI or pre-commit.
+# It is provided for instructors and advanced users who
+# explicitly run pyright. Students are NOT required to use it.
+# WHY: Strict type checking helps catch bugs early.
+
+typeCheckingMode = "strict"
+pythonVersion = "3.14"
+include = ["src"]
+extraPaths = ["src"]
+exclude = [ "**/node_modules", "**/.*", ".venv","**/__pycache__","dist","build"]
+
+# Diagnostics (type-system focused)
+reportMissingImports = "warning"
+reportMissingTypeStubs = "none" # WHY: Avoid noise from missing stubs for third-party libraries.
+reportIncompatibleVariableOverride = "warning"
+reportIncompatibleMethodOverride = "warning"
+reportOptionalSubscript = "warning"
+
+# Reduce noise
+reportPrivateUsage = "none"
+useLibraryCodeForTypes = false
+
+# Reduce noise associated with EDA libraries and exploratory data work
+reportUnknownMemberType = "none"
+reportUnknownArgumentType = "none"
+reportUnknownParameterType = "none"
+reportUnknownVariableType = "none"
+reportUnknownLambdaType = "none"
+
+# Environment resolution - all our projects use .venv for the virtual environment.
+# Only if you CANNOT USE .venv (e.g. due to IDE limitations) should you alter these.
+# for best results, follow the pro-analytics-02 instructions exactly.
+venvPath = "."
+venv = ".venv"
+
+# === PYTEST (VERIFY LOGIC) ===
+
+[tool.pytest.ini_options]
+# WHY: Ensure tests are discoverable and coverage is visible.
+minversion = "9.0"
+testpaths = ["tests"]
+addopts = " --cov=src --cov-report=term-missing"
+
+# === RUFF (PYTHON FORMATTING AND LINTING) ===
+
+[tool.ruff]
+# WHY: Ruff provides fast linting and formatting with deterministic output.
+exclude = [
+    ".eggs",
+    "*.egg-info",
+    ".ruff_cache",
+    ".venv",
+    "__pycache__",
+    "build",
+    "dist",
+    "site",
+]
+line-length = 88 # WHY: PEP 8 standard line length, wrap when possible.
+preview = false # WHY: Stable features only; avoid preview features.
+target-version = "py313" # WHY: Match latest supported Python version.
+unsafe-fixes = false # WHY: Avoid potentially unsafe automatic fixes.
+
+[tool.ruff.format]
+# WHY: Formatter choices should be stable to keep diffs small and predictable.
+indent-style = "space" # See also .gitattributes for indent style.
+line-ending = "auto" # Match existing files and let .gitattributes handle it.
+quote-style = "preserve" # Preserve existing quote styles to minimize churn.
+
+[tool.ruff.lint]
+# WHY: Professional baseline rules without requiring advanced refactors.
+select = [
+    "E",   # Basic syntax and structural correctness
+    "F",   # Undefined names and unused imports
+    "W",   # Warnings that catch easy issues early
+    "I",   # Deterministic import ordering
+    "UP",  # Modern Python constructs
+    "B",   # Common bug patterns
+    # "PTH", # Prefer pathlib patterns
+]
+ignore = [
+  "E501", # Final line length handled by formatter
+]
+
+[tool.ruff.lint.isort]
+# WHY: Ordering imports helps keep code diffs (differences) readable.
+force-sort-within-sections = true
+
+[tool.ruff.lint.per-file-ignores]
+# WHY: Some files MUST NOT undergo linting or automated fixes.
+"**/__init__.py" = ["D104", "F401"]
+"tests/**/*.py" = ["D", "B018", "B011","S101"]
+"src/**/py.typed" = ["ALL"]
+"**/*.log" = ["ALL"]
+
+# === CHOOSE PROJECT DOC STYLE ===
+
+[tool.ruff.lint.pydocstyle]
+# REQ: Google style is the project-wide docstring convention.
+convention = "google"   # ALT: "numpy" — choose one, never mix.
+
+# ============================================================
+# SECTION 3: BUILD SYSTEM (boilerplate; CUSTOM src/ agreement)
+# ============================================================
+#
+# REQ.PROJECT: A build system MUST be declared for package discovery and publishing.
+# REQ.STRUCTURE: All importable code MUST live under src/.
+# WHY src/ layout: Prevents accidental imports from the repo root;
+#     ensures consistent behavior across IDEs, tests, CI, and PyPI.
+
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling", "hatch-vcs"]
+
+[tool.hatch.build.hooks.vcs]
+# WHY: Writes computed version into src/*/_version.py at build time.
+# CUSTOM: Must match src/ folders.
+version-file = "src/datafun/_version.py"
+
+[tool.hatch.build.targets.wheel]
+# CUSTOM: Must match src/ folders.
+packages = ["src/datafun"]  # REQ.PACKAGES: Discovery rooted at src/.
+
+[tool.hatch.version]
+# WHY: Version derived from git tags at build time — no manual source file edits.
+source = "vcs"
+fallback-version = "0.1.0"              # Used when no git tags present (fresh clone, CI).
+tag-pattern = "^(?:v)?(?P<version>\\d+\\.\\d+\\.\\d+)$"

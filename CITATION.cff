@@ -20,9 +20,12 @@ authors:
     given-names: Denise M.
     orcid: "https://orcid.org/0000-0001-6165-7389"
     affiliation: "Northwest Missouri State University, School of Computer Science and Information Systems, Maryville, MO, USA"
+    family-names: Randow
+    given-names: Megan M.
+    affiliation: "Northwest Missouri State University, Maryville, MO, USA"
 
-repository-code: "https://github.com/denisecase/datafun-07-regression"
-url: "https://github.com/denisecase/datafun-07-regression"
+repository-code: "https://github.com/sum-randow/datafun-07-regression"
+url: "https://github.com/sum-randow/datafun-07-regression"
 license: MIT
 
 abstract: >

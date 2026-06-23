@@ -76,8 +76,7 @@ After you get a copy of this repo in your own GitHub account,
 open a machine terminal in your `Repos` folder:
 
 ```shell
-# Replace username with YOUR GitHub username.
-git clone https://github.com/username/datafun-07-regression
+git clone https://github.com/sum-randow/datafun-07-regression
 
 cd datafun-07-regression
 code .

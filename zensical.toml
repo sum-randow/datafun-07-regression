@@ -10,8 +10,8 @@
 
 [project]
 site_name = "Docs" # CUSTOM: Tab name of the documentation site.
-site_url = "https://denisecase.github.io/datafun-07-regression/"
-repo_url = "https://github.com/denisecase/datafun-07-regression"
+site_url = "https://sum-randow.github.io/datafun-07-regression/"
+repo_url = "https://github.com/sum-randow/datafun-07-regression"
 repo_name = "datafun-07-regression"
 site_description = "Project Documentation" # CUSTOM: Description of the documentation site.
 docs_dir = "docs" # source directory for documentation markdown files
@@ -21,7 +21,7 @@ edit_uri = "edit/main/docs/" # "Edit this page" links (GitHub)
 [project.extra]
 # WHY: Social links provide easy access to project repositories and profiles.
 social = [
-    {icon = "fontawesome/brands/github", link = "https://github.com/denisecase/datafun-07-regression" },
+    {icon = "fontawesome/brands/github", link = "https://github.com/sum-randow/datafun-07-regression" },
 ]
 
 # ------------------------------------------------------------

@@ -48,10 +48,32 @@ The issue is the shape of the relationship, not a missing variable.
 
 ### Phase 5 Custom Project
 
-Describe your custom project,
-what you recommend changing from the example,
-what results you analyzed, and what you learned.
+This project used the Our World in Data CO2 subset dataset (`owid-co2-data-subset.csv`)
+to explore whether a linear regression model could predict CO2 emissions from GDP.
 
-Include in your reflection an assessment of
-how much you exercised the skills and techniques covered
-and what problems you could apply them to in the future.
+**What I changed from the example:**
+The penguin example offered a clean linear relationship between two variables. The CO2
+dataset is messier — GDP and CO2 emissions span many countries and decades, and the
+relationship is not simply linear. I added `year` as a second predictor to test whether
+time improved the model, and then explored a log transformation of GDP as an alternative.
+
+**What results I analyzed:**
+- The original model (GDP only) produced a strong R² of 0.9562 but showed a curved arc
+  and heteroscedasticity in the residual plot — signs the linear fit is incomplete.
+- Adding `year` had no effect (R² unchanged), confirming GDP and year are correlated
+  and year contributes no independent signal.
+- A log transformation of GDP made the fit worse (R² dropped to 0.6851, RMSE increased
+  from 1352 to 3627), and introduced a strong downward trend in residuals.
+
+**What I learned:**
+A high R² does not mean a model is correct — the residual plot reveals what the number
+hides. The CO2 dataset is a good example of a real-world problem where a simple
+two-variable linear model is insufficient, and where additional factors like energy
+policy, region, and industrialization stage likely drive the variation.
+
+**Skills and techniques exercised:**
+This project applied linear regression, residual diagnostics, multi-feature modeling,
+and log transformations — all core techniques in data analytics. These skills apply
+directly to any real-world regression problem where the relationship between variables
+is not immediately obvious, and where iterative exploration and interpretation are
+required to understand what the model is and isn't capturing.

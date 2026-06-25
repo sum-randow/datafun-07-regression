@@ -171,9 +171,13 @@ Press `Ctrl+c` (both keys together) or `Ctrl+Z` then `Enter` on Windows.
 
 ## World Data: Is there a linear relationship? How can you improve the analysis?
 
-![Provide a Useful Caption](./docs/images/Figure_3.png)
+![Linear Regression of GDP vs CO2](./docs/images/Figure_3.png)
 
-![Provide a Useful Caption](./docs/images/Figure_4.png)
+![A line might not be best because there is pattern to the residual plot](./docs/images/Figure_4.png)
+
+Log transformation of GDP was tested but did not improve the fit — R² dropped from 0.9562 to 0.6851, suggesting the relationship requires more than rescaling to capture.
+
+![Residuals vs Log(GDP) Comparison](./notebooks/docs/images/residuals_log_comparison.png)
 
 ## Project Documentation
 

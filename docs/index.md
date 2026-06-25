@@ -22,3 +22,36 @@ to get these projects running on your machine.
 The API page is not always easy to read at first,
 but it becomes useful as you get more comfortable with project structure,
 modules, functions, and docstrings.
+
+## Custom Project
+
+### Basis
+
+The notebook begins with a subset of the Our World in Data CO2 dataset (owid-co2-data-subset.csv), using GDP as a numeric predictor and CO2 emissions as the target variable to fit and evaluate a simple linear regression model.
+
+### Phase 4 Modifications
+
+### Model Fit Interpretation
+
+**R-squared: 0.9562** — The model explains ~96% of the variation in CO2 emissions,
+suggesting a strong fit. However, the residual plot reveals a curved arc at low GDP
+values and increasing spread at higher values (heteroscedasticity), meaning a straight
+line does not fully capture the relationship.
+
+**Adding `year` as a second feature had no effect** — R-squared and RMSE were unchanged,
+suggesting `year` and `gdp` are correlated and `year` adds no independent signal.
+The issue is the shape of the relationship, not a missing variable.
+
+**Possible next step:** A log transformation of GDP may better linearize the relationship.
+
+
+
+### Phase 5 Custom Project
+
+Describe your custom project,
+what you recommend changing from the example,
+what results you analyzed, and what you learned.
+
+Include in your reflection an assessment of
+how much you exercised the skills and techniques covered
+and what problems you could apply them to in the future.

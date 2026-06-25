@@ -208,3 +208,224 @@ write down what you conclude.
 2026-06-23 10:34:32 | INFO | P07-NB | ========================
 2026-06-23 10:34:32 | INFO | P07-NB | Executed successfully!
 2026-06-23 10:34:32 | INFO | P07-NB | ========================
+2026-06-25 08:54:55 | INFO | P07-NB | === RUN START ===
+2026-06-25 08:54:55 | INFO | P07-NB | project=P07-NB
+2026-06-25 08:54:55 | INFO | P07-NB | repo_dir=datafun-07-regression
+2026-06-25 08:54:55 | INFO | P07-NB | python=3.14.6
+2026-06-25 08:54:55 | INFO | P07-NB | os=Darwin 25.5.0
+2026-06-25 08:54:55 | INFO | P07-NB | shell=zsh
+2026-06-25 08:54:55 | INFO | P07-NB | cwd=notebooks
+2026-06-25 08:54:55 | INFO | P07-NB | github_actions=False
+2026-06-25 08:54:55 | INFO | P07-NB | Loading dataset: owid-co2-data-subset
+2026-06-25 08:54:55 | INFO | P07-NB | Loaded: 350 rows, 14 columns
+2026-06-25 08:54:55 | INFO | P07-NB | Creating modeling view (dropping rows missing feature or target)
+2026-06-25 08:54:55 | DEBUG | P07-NB | Columns required to be non-missing: ['gdp', 'co2']
+2026-06-25 08:54:55 | INFO | P07-NB | Original rows: 350
+2026-06-25 08:54:55 | INFO | P07-NB | Model rows:    308
+2026-06-25 08:54:55 | INFO | P07-NB | Rows dropped:  42
+2026-06-25 08:54:55 | INFO | P07-NB | Building feature matrix X and target vector y
+2026-06-25 08:54:55 | DEBUG | P07-NB | X shape: (308, 2)  (rows, features)
+2026-06-25 08:54:55 | DEBUG | P07-NB | y shape: (308,)  (rows,)
+2026-06-25 08:54:55 | INFO | P07-NB | Fitting a linear regression (scikit-learn)
+2026-06-25 08:54:55 | DEBUG | P07-NB |   slope:     3.21582e-10
+2026-06-25 08:54:55 | DEBUG | P07-NB |   intercept: 308.446
+2026-06-25 08:54:55 | INFO | P07-NB | Fitted line:
+2026-06-25 08:54:55 | INFO | P07-NB |   co2 = 3.21582e-10 * gdp + 308.446
+2026-06-25 08:58:00 | INFO | P07-NB | Fitting a linear regression (scikit-learn)
+2026-06-25 08:58:00 | DEBUG | P07-NB |   slope (gdp):  3.21582e-10
+2026-06-25 08:58:00 | DEBUG | P07-NB |   slope (year): 4.14728e-23
+2026-06-25 08:58:00 | DEBUG | P07-NB |   intercept:    308.446
+2026-06-25 08:58:00 | INFO | P07-NB | Fitted line:
+2026-06-25 08:58:00 | INFO | P07-NB |   co2 = 3.21582e-10 * gdp + 4.14728e-23 * year + 308.446
+2026-06-25 08:58:20 | INFO | P07-NB | === RUN START ===
+2026-06-25 08:58:20 | INFO | P07-NB | project=P07-NB
+2026-06-25 08:58:20 | INFO | P07-NB | repo_dir=datafun-07-regression
+2026-06-25 08:58:20 | INFO | P07-NB | python=3.14.6
+2026-06-25 08:58:20 | INFO | P07-NB | os=Darwin 25.5.0
+2026-06-25 08:58:20 | INFO | P07-NB | shell=zsh
+2026-06-25 08:58:20 | INFO | P07-NB | cwd=notebooks
+2026-06-25 08:58:20 | INFO | P07-NB | github_actions=False
+2026-06-25 08:58:20 | INFO | P07-NB | Loading dataset: owid-co2-data-subset
+2026-06-25 08:58:20 | INFO | P07-NB | Loaded: 350 rows, 14 columns
+2026-06-25 08:58:20 | INFO | P07-NB | Creating modeling view (dropping rows missing feature or target)
+2026-06-25 08:58:20 | DEBUG | P07-NB | Columns required to be non-missing: ['gdp', 'co2']
+2026-06-25 08:58:20 | INFO | P07-NB | Original rows: 350
+2026-06-25 08:58:20 | INFO | P07-NB | Model rows:    308
+2026-06-25 08:58:20 | INFO | P07-NB | Rows dropped:  42
+2026-06-25 08:58:20 | INFO | P07-NB | Building feature matrix X and target vector y
+2026-06-25 08:58:20 | DEBUG | P07-NB | X shape: (308, 2)  (rows, features)
+2026-06-25 08:58:20 | DEBUG | P07-NB | y shape: (308,)  (rows,)
+2026-06-25 08:58:20 | INFO | P07-NB | Fitting a linear regression (scikit-learn)
+2026-06-25 08:58:20 | DEBUG | P07-NB |   slope (gdp):  3.21582e-10
+2026-06-25 08:58:20 | DEBUG | P07-NB |   slope (year): 4.14728e-23
+2026-06-25 08:58:20 | DEBUG | P07-NB |   intercept:    308.446
+2026-06-25 08:58:20 | INFO | P07-NB | Fitted line:
+2026-06-25 08:58:20 | INFO | P07-NB |   co2 = 3.21582e-10 * gdp + 4.14728e-23 * year + 308.446
+2026-06-25 08:58:20 | INFO | P07-NB | Computing fitted values for every observed row
+2026-06-25 08:58:20 | INFO | P07-NB | Predicting CO2 emissions for one example GDP value
+2026-06-25 08:59:40 | DEBUG | P07-NB |   example gdp:  1e+12
+2026-06-25 08:59:40 | DEBUG | P07-NB |   example year: 2020
+2026-06-25 08:59:40 | DEBUG | P07-NB |   predicted co2: 630.029
+2026-06-25 09:00:09 | INFO | P07-NB | Computing residuals (actual - fitted)
+2026-06-25 09:00:09 | INFO | P07-NB | Fit numbers (requires interpretation):
+2026-06-25 09:00:09 | DEBUG | P07-NB |   R-squared: 0.9562
+2026-06-25 09:00:09 | DEBUG | P07-NB |   RMSE:      1352.43  (in units of CO2 emissions)
+2026-06-25 09:00:09 | DEBUG | P07-NB |   residual min:  -4622.56
+2026-06-25 09:00:09 | DEBUG | P07-NB |   residual max:  8584.86
+2026-06-25 09:00:09 | DEBUG | P07-NB |   residual mean: 9.4493e-14
+2026-06-25 09:00:09 | INFO | P07-NB | 
+CUSTOM: Update these notes and use Markdown cells to narrate what you see.
+
+How to read these (this is YOUR judgment, not the script's):
+
+- R-squared near 1: the line accounts for most of the variation in y.
+- R-squared near 0: the line accounts for almost none.
+- RMSE: the typical distance between a point and the line, in y's units.
+- Residual plot:
+  - if a straight line fits well, residuals
+    scatter randomly around 0 with no pattern.
+  - A curve,
+  - a funnel (spread that grows or shrinks),
+  - or clusters are signs a straight line
+    is NOT the right description, which can be a useful finding.
+
+There is no threshold that decides this for you.
+Look at the numbers and the plots together and
+write down what you conclude.
+
+2026-06-25 09:02:41 | INFO | P07-NB | Computing residuals (actual - fitted)
+2026-06-25 09:02:41 | INFO | P07-NB | Fit numbers (requires interpretation):
+2026-06-25 09:02:41 | DEBUG | P07-NB |   R-squared: 0.9562
+2026-06-25 09:02:41 | DEBUG | P07-NB |   RMSE:      1352.43  (in units of CO2 emissions)
+2026-06-25 09:02:41 | DEBUG | P07-NB |   residual min:  -4622.56
+2026-06-25 09:02:41 | DEBUG | P07-NB |   residual max:  8584.86
+2026-06-25 09:02:41 | DEBUG | P07-NB |   residual mean: 9.4493e-14
+2026-06-25 09:04:05 | INFO | P07-NB | ---- Creating Scatter Plot with Fitted Line ----------
+2026-06-25 09:04:05 | INFO | P07-NB | ----   Set x to GDP -----------------------
+2026-06-25 09:04:05 | INFO | P07-NB | ----   Set y to CO2 emissions -------------------------
+2026-06-25 09:05:50 | INFO | P07-NB | ========================
+2026-06-25 09:05:50 | INFO | P07-NB | SUMMARY
+2026-06-25 09:05:50 | INFO | P07-NB | ========================
+2026-06-25 09:05:50 | INFO | P07-NB | Dataset: owid-co2-data-subset
+2026-06-25 09:05:50 | INFO | P07-NB | Feature (x): gdp
+2026-06-25 09:05:50 | INFO | P07-NB | Target  (y): co2
+2026-06-25 09:05:50 | INFO | P07-NB | Original rows: 350
+2026-06-25 09:05:50 | INFO | P07-NB | Model rows:    308
+2026-06-25 09:05:50 | INFO | P07-NB | Fitted line:
+2026-06-25 09:05:50 | INFO | P07-NB |   co2 = 3.21582e-10 * gdp + 308.446
+2026-06-25 09:05:50 | INFO | P07-NB | EDA workflow complete
+2026-06-25 09:05:50 | INFO | P07-NB | ========================
+2026-06-25 09:05:50 | INFO | P07-NB | Executed successfully!
+2026-06-25 09:05:50 | INFO | P07-NB | ========================
+2026-06-25 09:10:39 | INFO | P07-NB | === RUN START ===
+2026-06-25 09:10:39 | INFO | P07-NB | project=P07-NB
+2026-06-25 09:10:39 | INFO | P07-NB | repo_dir=datafun-07-regression
+2026-06-25 09:10:39 | INFO | P07-NB | python=3.14.6
+2026-06-25 09:10:39 | INFO | P07-NB | os=Darwin 25.5.0
+2026-06-25 09:10:39 | INFO | P07-NB | shell=zsh
+2026-06-25 09:10:39 | INFO | P07-NB | cwd=notebooks
+2026-06-25 09:10:39 | INFO | P07-NB | github_actions=False
+2026-06-25 09:10:39 | INFO | P07-NB | Loading dataset: owid-co2-data-subset
+2026-06-25 09:10:40 | INFO | P07-NB | Loaded: 350 rows, 14 columns
+2026-06-25 09:10:40 | INFO | P07-NB | Creating modeling view (dropping rows missing feature or target)
+2026-06-25 09:10:40 | DEBUG | P07-NB | Columns required to be non-missing: ['gdp', 'co2']
+2026-06-25 09:10:40 | INFO | P07-NB | Original rows: 350
+2026-06-25 09:10:40 | INFO | P07-NB | Model rows:    308
+2026-06-25 09:10:40 | INFO | P07-NB | Rows dropped:  42
+2026-06-25 09:10:40 | INFO | P07-NB | Building feature matrix X and target vector y
+2026-06-25 09:10:40 | DEBUG | P07-NB | X shape: (308, 2)  (rows, features)
+2026-06-25 09:10:40 | DEBUG | P07-NB | y shape: (308,)  (rows,)
+2026-06-25 09:10:40 | INFO | P07-NB | Fitting a linear regression (scikit-learn)
+2026-06-25 09:10:40 | DEBUG | P07-NB |   slope (gdp):  3.21582e-10
+2026-06-25 09:10:40 | DEBUG | P07-NB |   slope (year): 4.14728e-23
+2026-06-25 09:10:40 | DEBUG | P07-NB |   intercept:    308.446
+2026-06-25 09:10:40 | INFO | P07-NB | Fitted line:
+2026-06-25 09:10:40 | INFO | P07-NB |   co2 = 3.21582e-10 * gdp + 4.14728e-23 * year + 308.446
+2026-06-25 09:10:40 | INFO | P07-NB | Computing fitted values for every observed row
+2026-06-25 09:10:40 | INFO | P07-NB | Predicting CO2 emissions for one example GDP value
+2026-06-25 09:10:40 | DEBUG | P07-NB |   example gdp:  1e+12
+2026-06-25 09:10:40 | DEBUG | P07-NB |   example year: 2020
+2026-06-25 09:10:40 | DEBUG | P07-NB |   predicted co2: 630.029
+2026-06-25 09:10:40 | INFO | P07-NB | Computing residuals (actual - fitted)
+2026-06-25 09:10:40 | INFO | P07-NB | Fit numbers (requires interpretation):
+2026-06-25 09:10:40 | DEBUG | P07-NB |   R-squared: 0.9562
+2026-06-25 09:10:40 | DEBUG | P07-NB |   RMSE:      1352.43  (in units of CO2 emissions)
+2026-06-25 09:10:40 | DEBUG | P07-NB |   residual min:  -4622.56
+2026-06-25 09:10:40 | DEBUG | P07-NB |   residual max:  8584.86
+2026-06-25 09:10:40 | DEBUG | P07-NB |   residual mean: 9.4493e-14
+2026-06-25 09:10:40 | INFO | P07-NB | ---- Creating Scatter Plot with Fitted Line ----------
+2026-06-25 09:10:40 | INFO | P07-NB | ----   Set x to GDP -----------------------
+2026-06-25 09:10:40 | INFO | P07-NB | ----   Set y to CO2 emissions -------------------------
+2026-06-25 09:10:40 | INFO | P07-NB | ------ Creating Residual Plot --------------------------
+2026-06-25 09:10:40 | INFO | P07-NB | ------   Set x to GDP ----------------------
+2026-06-25 09:10:40 | INFO | P07-NB | ------   Set y to the residual (actual - fitted) -------
+2026-06-25 09:10:40 | INFO | P07-NB | ========================
+2026-06-25 09:10:40 | INFO | P07-NB | SUMMARY
+2026-06-25 09:10:40 | INFO | P07-NB | ========================
+2026-06-25 09:10:40 | INFO | P07-NB | Dataset: owid-co2-data-subset
+2026-06-25 09:10:40 | INFO | P07-NB | Feature (x): gdp
+2026-06-25 09:10:40 | INFO | P07-NB | Target  (y): co2
+2026-06-25 09:10:40 | INFO | P07-NB | Original rows: 350
+2026-06-25 09:10:40 | INFO | P07-NB | Model rows:    308
+2026-06-25 09:10:40 | INFO | P07-NB | Fitted line:
+2026-06-25 09:10:40 | INFO | P07-NB |   co2 = 3.21582e-10 * gdp + 308.446
+2026-06-25 09:10:40 | INFO | P07-NB | EDA workflow complete
+2026-06-25 09:10:40 | INFO | P07-NB | ========================
+2026-06-25 09:10:40 | INFO | P07-NB | Executed successfully!
+2026-06-25 09:10:40 | INFO | P07-NB | ========================
+2026-06-25 09:14:41 | INFO | P07-NB | === RUN START ===
+2026-06-25 09:14:41 | INFO | P07-NB | project=P07-NB
+2026-06-25 09:14:41 | INFO | P07-NB | repo_dir=datafun-07-regression
+2026-06-25 09:14:41 | INFO | P07-NB | python=3.14.6
+2026-06-25 09:14:41 | INFO | P07-NB | os=Darwin 25.5.0
+2026-06-25 09:14:41 | INFO | P07-NB | shell=zsh
+2026-06-25 09:14:41 | INFO | P07-NB | cwd=notebooks
+2026-06-25 09:14:41 | INFO | P07-NB | github_actions=False
+2026-06-25 09:14:41 | INFO | P07-NB | Loading dataset: owid-co2-data-subset
+2026-06-25 09:14:42 | INFO | P07-NB | Loaded: 350 rows, 14 columns
+2026-06-25 09:14:42 | INFO | P07-NB | Creating modeling view (dropping rows missing feature or target)
+2026-06-25 09:14:42 | DEBUG | P07-NB | Columns required to be non-missing: ['gdp', 'co2']
+2026-06-25 09:14:42 | INFO | P07-NB | Original rows: 350
+2026-06-25 09:14:42 | INFO | P07-NB | Model rows:    308
+2026-06-25 09:14:42 | INFO | P07-NB | Rows dropped:  42
+2026-06-25 09:14:42 | INFO | P07-NB | Building feature matrix X and target vector y
+2026-06-25 09:14:42 | DEBUG | P07-NB | X shape: (308, 2)  (rows, features)
+2026-06-25 09:14:42 | DEBUG | P07-NB | y shape: (308,)  (rows,)
+2026-06-25 09:14:42 | INFO | P07-NB | Fitting a linear regression (scikit-learn)
+2026-06-25 09:14:42 | DEBUG | P07-NB |   slope (gdp):  3.21582e-10
+2026-06-25 09:14:42 | DEBUG | P07-NB |   slope (year): 4.14728e-23
+2026-06-25 09:14:42 | DEBUG | P07-NB |   intercept:    308.446
+2026-06-25 09:14:42 | INFO | P07-NB | Fitted line:
+2026-06-25 09:14:42 | INFO | P07-NB |   co2 = 3.21582e-10 * gdp + 4.14728e-23 * year + 308.446
+2026-06-25 09:14:42 | INFO | P07-NB | Computing fitted values for every observed row
+2026-06-25 09:14:42 | INFO | P07-NB | Predicting CO2 emissions for one example GDP value
+2026-06-25 09:14:42 | DEBUG | P07-NB |   example gdp:  1e+12
+2026-06-25 09:14:42 | DEBUG | P07-NB |   example year: 2020
+2026-06-25 09:14:42 | DEBUG | P07-NB |   predicted co2: 630.029
+2026-06-25 09:14:42 | INFO | P07-NB | Computing residuals (actual - fitted)
+2026-06-25 09:14:42 | INFO | P07-NB | Fit numbers (requires interpretation):
+2026-06-25 09:14:42 | DEBUG | P07-NB |   R-squared: 0.9562
+2026-06-25 09:14:42 | DEBUG | P07-NB |   RMSE:      1352.43  (in units of CO2 emissions)
+2026-06-25 09:14:42 | DEBUG | P07-NB |   residual min:  -4622.56
+2026-06-25 09:14:42 | DEBUG | P07-NB |   residual max:  8584.86
+2026-06-25 09:14:42 | DEBUG | P07-NB |   residual mean: 9.4493e-14
+2026-06-25 09:14:42 | INFO | P07-NB | ---- Creating Scatter Plot with Fitted Line ----------
+2026-06-25 09:14:42 | INFO | P07-NB | ----   Set x to GDP -----------------------
+2026-06-25 09:14:42 | INFO | P07-NB | ----   Set y to CO2 emissions -------------------------
+2026-06-25 09:14:42 | INFO | P07-NB | ------ Creating Residual Plot --------------------------
+2026-06-25 09:14:42 | INFO | P07-NB | ------   Set x to GDP ----------------------
+2026-06-25 09:14:42 | INFO | P07-NB | ------   Set y to the residual (actual - fitted) -------
+2026-06-25 09:14:42 | INFO | P07-NB | ========================
+2026-06-25 09:14:42 | INFO | P07-NB | SUMMARY
+2026-06-25 09:14:42 | INFO | P07-NB | ========================
+2026-06-25 09:14:42 | INFO | P07-NB | Dataset: owid-co2-data-subset
+2026-06-25 09:14:42 | INFO | P07-NB | Feature (x): gdp
+2026-06-25 09:14:42 | INFO | P07-NB | Target  (y): co2
+2026-06-25 09:14:42 | INFO | P07-NB | Original rows: 350
+2026-06-25 09:14:42 | INFO | P07-NB | Model rows:    308
+2026-06-25 09:14:42 | INFO | P07-NB | Fitted line:
+2026-06-25 09:14:42 | INFO | P07-NB |   co2 = 3.21582e-10 * gdp + 4.14728e-23 * year + 308.446
+2026-06-25 09:14:42 | INFO | P07-NB | EDA workflow complete
+2026-06-25 09:14:42 | INFO | P07-NB | ========================
+2026-06-25 09:14:42 | INFO | P07-NB | Executed successfully!
+2026-06-25 09:14:42 | INFO | P07-NB | ========================
